@@ -57,34 +57,30 @@ export default function Login() {
               >
                 Continue
               </button>
+            <div className="divider">
+            <span>or</span>
+            </div>
+
+            <button className="social-btn">
+            <FaGoogle />
+            Continue with Google
+            </button>
+
+            <button className="social-btn">
+            <FaMicrosoft />
+            Continue with Microsoft
+            </button>
+
+            <button className="social-btn">
+            <FaGithub />
+            Continue with GitHub
+            </button>
             </div>
           </div>
         )}
 
-<div className="divider">
-  <span>or</span>
-</div>
-
-<button className="social-btn">
-  <FaGoogle />
-  Continue with Google
-</button>
-
-<button className="social-btn">
-  <FaMicrosoft />
-  Continue with Microsoft
-</button>
-
-<button className="social-btn">
-  <FaGithub />
-  Continue with GitHub
-</button>
-
         {step === 2 && (
           <div className="screen">
-            <p className="subtitle">Enter your password</p>
-
-            <p className="email-display">{email}</p>
 
             <div className="login-card">
               <input
