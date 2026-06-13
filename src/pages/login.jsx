@@ -4,6 +4,7 @@ import {
     FaGithub,
     FaMicrosoft
   } from "react-icons/fa";
+  import {Link } from "react-router-dom";
 
 export default function Login() {
   const [text, setText] = useState("");
@@ -57,9 +58,17 @@ export default function Login() {
               >
                 Continue
               </button>
+              <div className="signconn">
+                <p>Don't have an account?
+                <span style={{color:"black"}}><Link to = "/signup">Signup!</Link></span>
+                </p>
+              </div>
+             
+
             <div className="divider">
             <span>or</span>
             </div>
+            
 
             <button className="social-btn">
             <FaGoogle />
@@ -77,6 +86,7 @@ export default function Login() {
             </button>
             </div>
           </div>
+          
         )}
 
         {step === 2 && (

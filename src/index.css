@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+ 
 }
 
 body {
@@ -66,6 +67,10 @@ body {
 
   padding: 28px;
 
+    display: flex;
+    flex-direction: column;
+
+
   border-radius: 24px;
 
   box-shadow:
@@ -97,12 +102,9 @@ body {
 
 .login-btn {
   width: 100%;
-
   padding: 16px;
-
   border: none;
   border-radius: 14px;
-
   background: #52b788;
   color: white;
 
@@ -166,8 +168,8 @@ body {
 .divider {
   display: flex;
   align-items: center;
-
   margin: 22px 0;
+  
 }
 
 .divider::before,
@@ -186,11 +188,11 @@ body {
 
 .social-btn {
   width: 100%;
-
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  
 
   padding: 14px;
 
@@ -215,8 +217,18 @@ body {
 }
 .tagline {
   text-align: center;
-  color: #5f5f5f;
+  color: #a8a5a5;
   font-size: 0.95rem;
   font-weight: 400;
   margin-bottom: 30px;
+}
+.signconn {
+  margin-top: 7px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  align-items: center;
+  color: rgb(92, 92, 96);
+  
 }
