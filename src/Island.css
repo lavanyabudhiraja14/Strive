@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    background: #05241f;
+  }
+  
+  .island-page {
+    min-height: 100vh;
+    padding-top: 30px;
+  }
+  
+  .header {
+    text-align: center;
+    color: white;
+  }
+  
+  .header h1 {
+    margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+    width: 450px;
+    height: 18px;
+    margin: auto;
+    border-radius: 50px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.25);
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background: #76ef55;
+  }
+  
+  .island-container {
+    position: relative;
+    width: 900px;
+    margin: 80px auto;
+  }
+  
+  .island-base {
+    width: 100%;
+    display: block;
+  }
+  
+  /* Common */
+  
+  .tree,
+  .house,
+  .flower,
+  .campfire {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  /* Tree */
+  
+  .tree {
+    width: 110px;
+    z-index: 5;
+    transform: translate(-50%, -85%);
+  }
+  
+  /* House */
+  
+  .house {
+    width: 100px;
+    z-index: 6;
+    transform: translate(-50%, -80%);
+  }
+  
+  /* Flowers */
+  
+  .flower {
+    width: 75px;
+    z-index: 2;
+    transform: translate(-60%, -40%);
+  }
+  
+  /* Campfire */
+  
+  .campfire {
+    width: 45px;
+    z-index: 7;
+    transform: translate(-50%, -50%);
+  }

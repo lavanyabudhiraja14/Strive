@@ -1,0 +1,328 @@
+.home-page {
+    margin-left: 260px;
+    padding: 30px;
+    min-height: 100vh;
+    background: #dff2fb;
+  }
+  
+  /* ======================
+     WELCOME
+  ====================== */
+  
+  .welcome-card {
+    margin-bottom: 20px;
+  }
+  
+  .welcome-card h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2d4b55;
+  }
+  
+  /* ======================
+     DASHBOARD
+  ====================== */
+  
+  .dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* ======================
+     ISLAND
+  ====================== */
+  
+  .island-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .island-container {
+    position: relative;
+  
+    width: 100%;
+    height: 720px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .island-base {
+    width: 1700px;
+  
+    position: absolute;
+    left: 50%;
+  
+    transform: translateX(-50%);
+  
+    z-index: 1;
+  
+    animation: floatIsland 5s ease-in-out infinite;
+  }
+  
+  /* ======================
+     ISLAND OBJECTS
+  ====================== */
+  
+  .tree {
+    position: absolute;
+    z-index: 5;
+  
+    transform: translate(-50%, -100%);
+  }
+  
+  .tree.darktree {
+    width: 190px;
+  }
+  
+  .tree.lighttree {
+    width: 120px;
+  }
+  
+  .flower {
+    position: absolute;
+    width: 95px;
+    z-index: 6;
+  }
+  
+  .house {
+    position: absolute;
+  
+    width: 250px;
+  
+    z-index: 999;
+  
+    transform: translate(-50%, -100%);
+  }
+  
+  .stone {
+    position: absolute;
+  
+    width: 55px;
+  
+    z-index: 4;
+  
+    transform: translate(-50%, -50%);
+  }
+  
+  
+
+.tasks-card {
+    width: 330px;
+    max-height: 350px;
+    overflow-y: auto;
+    background: white;
+    border-radius: 24px;
+    padding: 24px;
+  }
+  
+  .tasks-card::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .tasks-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .tasks-card h2 {
+    margin-bottom: 20px;
+    color: #2d4b55;
+  }
+  
+  .task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    background: #f8fafb;
+    border-radius: 14px;
+  }
+  
+  .task input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #4caf50;
+  }
+  
+  .task label {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  /* ======================
+     CONSISTENCY
+  ====================== */
+  
+  .consistency-card {
+    margin-top: 25px;
+  
+    background: white;
+  
+    border-radius: 24px;
+  
+    padding: 28px;
+  
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  
+    transition: 0.3s;
+  }
+  
+  .consistency-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .consistency-card h2 {
+    margin-bottom: 20px;
+  
+    color: #2d4b55;
+  }
+  
+  .consistency-grid {
+    display: grid;
+  
+    grid-template-columns:
+      repeat(18, 1fr);
+  
+    gap: 8px;
+  
+    justify-items: center;
+  }
+  
+  .box {
+    width: 22px;
+    height: 22px;
+  
+    border-radius: 6px;
+  
+    background: #e5e7eb;
+  }
+  
+  .box.active {
+    background: #7acb7f;
+  }
+  
+  /* ======================
+     FLOAT ANIMATION
+  ====================== */
+  
+  @keyframes floatIsland {
+    0% {
+      transform:
+        translateX(-50%)
+        translateY(0px);
+    }
+  
+    50% {
+      transform:
+        translateX(-50%)
+        translateY(-12px);
+    }
+  
+    100% {
+      transform:
+        translateX(-50%)
+        translateY(0px);
+    }
+  }
+  
+  /* ======================
+     RESPONSIVE
+  ====================== */
+  
+  @media (max-width: 1200px) {
+    .island-base {
+      width: 850px;
+    }
+  
+    .island-container {
+      height: 600px;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .home-page {
+      margin-left: 0;
+      padding: 20px;
+    }
+  
+    .island-base {
+      width: 650px;
+    }
+  
+    .island-container {
+      height: 500px;
+    }
+  }
+  
+  .consistency-card {
+    margin-top: 25px;
+  
+    background: white;
+  
+    border-radius: 24px;
+  
+    padding: 28px;
+  
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  }
+  
+  .consistency-card h2 {
+    margin-bottom: 20px;
+    color: #2d4b55;
+  }
+  .island-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  
+    margin-bottom: 25px;
+  }
+  
+  .island-stat-box {
+    background: white;
+  
+    width: 130px;
+  
+    height: 90px;
+  
+    border-radius: 18px;
+  
+    display: flex;
+    flex-direction: column;
+  
+    justify-content: center;
+    align-items: center;
+  
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  
+    transition: 0.3s;
+  }
+  
+  .island-stat-box:hover {
+    transform: translateY(-4px);
+  }
+  
+  .island-stat-box span {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .island-stat-box h3 {
+    margin-top: 8px;
+  
+    font-size: 28px;
+  
+    color: #2d4b55;
+  }
+  

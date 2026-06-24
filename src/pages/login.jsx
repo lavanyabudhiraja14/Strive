@@ -1,15 +1,23 @@
+import "../index.css";
 import { useEffect, useState } from "react";
 import {
-    FaGoogle,
-    FaGithub,
-    FaMicrosoft
-  } from "react-icons/fa";
-  import {Link } from "react-router-dom";
+  FaGoogle,
+  FaGithub,
+  FaMicrosoft,
+} from "react-icons/fa";
+
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
 
 export default function Login() {
   const [text, setText] = useState("");
   const [step, setStep] = useState(1);
+
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const word = "STRIVE";
@@ -27,6 +35,37 @@ export default function Login() {
     return () => clearInterval(timer);
   }, []);
 
+  const handleLogin = async () => {
+    try {
+      const res = await axios.post(
+        "http://localhost:8000/api/auth/login",
+        {
+          email,
+          password,
+        }
+      );
+
+      localStorage.setItem(
+        "token",
+        res.data.token
+      );
+
+      localStorage.setItem(
+        "user",
+        JSON.stringify(res.data.user)
+      );
+
+      alert("Login Successful 🎉");
+
+      navigate("/");
+    } catch (error) {
+      alert(
+        error.response?.data?.message ||
+          "Login Failed"
+      );
+    }
+  };
+
   return (
     <div className="login-page">
       <div className="login-container">
@@ -37,19 +76,22 @@ export default function Login() {
         </div>
 
         <p className="tagline">
-            Build better habits every day
+          Build better habits every day
         </p>
 
         {step === 1 && (
           <div className="screen">
 
             <div className="login-card">
+
               <input
                 type="email"
                 placeholder="Email address"
                 className="input-field"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) =>
+                  setEmail(e.target.value)
+                }
               />
 
               <button
@@ -58,48 +100,60 @@ export default function Login() {
               >
                 Continue
               </button>
+
               <div className="signconn">
-                <p>Don't have an account?
-                <span style={{color:"black"}}><Link to = "/signup">Signup!</Link></span>
+                <p>
+                  Don't have an account?
+                  <span style={{ color: "black" }}>
+                    <Link to="/signup">
+                      Signup!
+                    </Link>
+                  </span>
                 </p>
               </div>
-             
 
-            <div className="divider">
-            <span>or</span>
-            </div>
-            
+              <div className="divider">
+                <span>or</span>
+              </div>
 
-            <button className="social-btn">
-            <FaGoogle />
-            Continue with Google
-            </button>
+              <button className="social-btn">
+                <FaGoogle />
+                Continue with Google
+              </button>
 
-            <button className="social-btn">
-            <FaMicrosoft />
-            Continue with Microsoft
-            </button>
+              <button className="social-btn">
+                <FaMicrosoft />
+                Continue with Microsoft
+              </button>
 
-            <button className="social-btn">
-            <FaGithub />
-            Continue with GitHub
-            </button>
+              <button className="social-btn">
+                <FaGithub />
+                Continue with GitHub
+              </button>
+
             </div>
           </div>
-          
         )}
 
         {step === 2 && (
           <div className="screen">
 
             <div className="login-card">
+
               <input
                 type="password"
                 placeholder="Password"
                 className="input-field"
+                value={password}
+                onChange={(e) =>
+                  setPassword(e.target.value)
+                }
               />
 
-              <button className="login-btn">
+              <button
+                className="login-btn"
+                onClick={handleLogin}
+              >
                 Log In
               </button>
 
@@ -109,6 +163,7 @@ export default function Login() {
               >
                 ← Back
               </button>
+
             </div>
           </div>
         )}

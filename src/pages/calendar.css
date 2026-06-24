@@ -1,0 +1,171 @@
+.calendar-page {
+  margin-left: 260px;
+  padding: 30px;
+  background: #f7e1d7;
+  min-height: 100vh;
+}
+
+.calendar-header h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.calendar-header p {
+  color: #666;
+}
+
+.calendar-layout {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 24px;
+}
+
+/* MAIN CARDS */
+
+.calendar-section,
+.tasks-card,
+.monthly-card,
+.consistency-card {
+  background: white;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.tasks-card,
+.monthly-card,
+.consistency-card {
+  margin-bottom: 20px;
+}
+
+/* BIG CALENDAR */
+
+.react-calendar {
+  width: 100% !important;
+  border: none !important;
+  border-radius: 20px;
+  padding: 15px;
+  font-size: 17px;
+}
+
+.react-calendar__navigation {
+  margin-bottom: 20px;
+}
+
+.react-calendar__navigation button {
+  border-radius: 10px;
+  min-height: 44px;
+}
+
+.react-calendar__month-view__weekdays {
+  margin-bottom: 10px;
+}
+
+.react-calendar__tile {
+  height: 80px !important;
+  border-radius: 12px;
+}
+
+.react-calendar__tile:hover {
+  background: #eef7ee !important;
+}
+
+.react-calendar__tile--active {
+  background: #5cb85c !important;
+  color: white !important;
+}
+
+/* TASK FORM */
+
+.tasks-card input,
+.tasks-card select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.tasks-card input:focus,
+.tasks-card select:focus {
+  border-color: #6bc46d;
+}
+
+.add-task-btn {
+  background: #556b5a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.add-task-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* TASKS */
+
+.task-item {
+  background: #f8faf8;
+  border-radius: 14px;
+  padding: 14px;
+  margin-top: 12px;
+  transition: 0.2s;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+}
+
+.task-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* PROGRESS CIRCLE */
+
+.progress-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 14px solid #6bc46d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  font-size: 2rem;
+  font-weight: bold;
+  background: #f9fff9;
+}
+
+/* PRODUCTIVITY CARD */
+
+.monthly-card p {
+  margin: 12px 0;
+  font-size: 15px;
+}
+
+/* GOALS CARD */
+
+.consistency-card p {
+  margin: 10px 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .calendar-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-circle {
+    width: 150px;
+    height: 150px;
+  }
+}
+
