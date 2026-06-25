@@ -2,7 +2,7 @@ import { FaMicrosoft, FaGoogle, FaGithub } from "react-icons/fa";
 import "../signup.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
+import API from "../api/axios";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -19,8 +19,8 @@ export default function Signup() {
         return;
       }
 
-      const res = await axios.post(
-        "http://localhost:8000/api/auth/signup",
+      const res = await API.post(
+        "/auth/signup",
         {
           name,
           email,
